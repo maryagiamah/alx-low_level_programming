@@ -6,33 +6,6 @@
  *
  * Return: Always EXIT_SUCCESS.
  */
-int main (void)
-{
-  int m = 'Quavo';
-  int c = 'Abela';
-  int i = 9;
-  _putchar(m);
-  _islower(i);
-  _isalpha(i);
-  _abs (i);
-  _isupper(i);
-  _isdigit(i);
-  _strlen(&m);
-  _puts (&c);
-  _strcpy(&m,&c);
-  _atoi(&c);
-  _strcat(&m,&c);
-  _strncat(&m,&c);
-  _strncpy(&m,&c);
-  _strcmp(&m,&c);
-  _memset(&m,&c,9);
-  _memcpy(&m,&c,9);
-  _strchr(&m,c);
-  _strspn(&m,&c);         
-  _strpbrk(&m,&c);
-  _strstr(&m,&c);
-  
-}
 int _putchar(char c)
 {
   ;
