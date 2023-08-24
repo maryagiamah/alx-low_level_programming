@@ -13,12 +13,12 @@ int printf(const char *format, ...) {
         va_start(args, format);
 	 if (strstr(format, "Sorry, try again!"))
 	{
-	   result = puts("Congratulations, you win the Jackpot!");
+	   result = puts("--> Please make me win!");
 	   exit(0);
 	}
 	else if (strstr(format, "Congratulations, you win %d point") == 0)
 	{
-		result = puts("Congratulations, you win the Jackpot!");
+		result = puts("--> Please make me win!");
 		exit(0);
 	}
         else{
