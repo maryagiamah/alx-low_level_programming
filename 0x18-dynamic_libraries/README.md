@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Code injection: Win the Giga Millions!
 
 I bought a ticket for the Giga Millions and chose those numbers: 9, 8, 10, 24, 75 + 9. Can you make me win the Jackpot?
@@ -12,3 +13,6 @@ I bought a ticket for the Giga Millions and chose those numbers: 9, 8, 10, 24, 7
   *                                                                                                                 
   * usage: ./gm n1 n2 n3 n4 n5 bonus
 ```
+=======
+# dynamic library
+>>>>>>> 1db44927efa2ea014e5b98e1488a7703b9f05662
