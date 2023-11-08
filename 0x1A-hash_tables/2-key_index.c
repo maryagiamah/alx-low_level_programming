@@ -5,7 +5,7 @@
  * @size: size of the array.
  *
  * @key: The key, string
- * Return: A pointer to the newly created hash table.
+ * Return: The index at which the key/value pair should be stored in the hash table
  */
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
