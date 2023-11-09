@@ -53,7 +53,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
                 new = add_node(&(ht->array[index]), key, value);
                 if(!new)
                         return 0;
-                        ht->array[index] = new;
+                ht->array[index] = new;
         }
         else
         {
