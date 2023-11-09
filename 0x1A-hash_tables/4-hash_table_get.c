@@ -14,10 +14,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
         unsigned long int index;
         
         if (ht)
+        {
                 index = key_index((const unsigned char *)key, ht->size);
                 current = ht->array[index];
+        }
         else
                 return NULL;
+        
         while (current)
         {
                         if (strcmp(current->key, key) == 0)
