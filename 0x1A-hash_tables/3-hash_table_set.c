@@ -20,9 +20,7 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
         new->value = strdup(value); 
         
         if (!new->key || !new->value)
-        {
-                free(new->key);
-                free(new->value);
+        {   
                 free(new);
                 return NULL;
         }
