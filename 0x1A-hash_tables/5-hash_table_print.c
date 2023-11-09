@@ -15,7 +15,6 @@ void hash_table_print(const hash_table_t *ht)
     if (!ht)
     {
         printf("{}\n");
-        return;
     }
 
     printf("{");
@@ -32,5 +31,6 @@ void hash_table_print(const hash_table_t *ht)
             current = current->next;
         }
     }
-    printf("}\n");
+    if (ht)
+        printf("}\n");
 }
