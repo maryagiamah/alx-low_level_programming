@@ -1,3 +1,6 @@
+#include "hash_tables.h"
+#include <string.h>
+#include <stdio.h>
 /**
  *  hash_table_print  - prints a hash table.
  * @ht: double pointer to a linked list
