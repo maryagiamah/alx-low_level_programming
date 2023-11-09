@@ -1,13 +1,13 @@
 #include "hash_tables.h"
-#include <stdio.h>
+#include <stdlib.h>
 /**
- *  hash_table_print  - deletes a hash table.
+ *  hash_table_delete  - deletes a hash table.
  * @ht: double pointer to a linked list
  *
  * Return: Void.
  *
  */
-void hash_table_print(const hash_table_t *ht)
+void hash_table_delete(hash_table_t *ht)
 {
         int i;
         
