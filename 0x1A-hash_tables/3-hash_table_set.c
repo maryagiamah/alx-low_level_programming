@@ -34,8 +34,8 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
  * hash_table_set - adds an element to the hash table.
  * @ht: pointer to the hash table.
  * @key: key to add.
- * @value: value to associate with the key.
  *
+ * @value: value to associate with the key.
  * Return: 1 if it succeeded, 0 otherwise.
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
@@ -61,12 +61,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
                         {
                                 free(current->value); /* Free the old value */
                                 current->value = strdup(value); /* Update value */
+                                if (!current->value)
+                                        return 0;
                                 return 1;
                         }
 
                         if (current->next == NULL)
                         {
-                                add_node(&(current->next), key, value);
+                                add_node(ht->array[index], key, value);
                                 return 1;
                         }
 
