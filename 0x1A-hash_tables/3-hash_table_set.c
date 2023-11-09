@@ -68,7 +68,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
                         if (current->next == NULL)
                         {
-                                add_node(ht->array[index], key, value);
+                                add_node(&(ht->array[index]), key, value);
                                 return 1;
                         }
 
