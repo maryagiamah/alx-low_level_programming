@@ -1,9 +1,7 @@
 #include "main.h"
 
-/*
- * File: 100-elf_header.c
- * Auth:Abel Berhanu
- */
+
+ /* File: 100-elf_header.c */
 
 /**
  * check_elf - Checks if a file is an ELF file.
