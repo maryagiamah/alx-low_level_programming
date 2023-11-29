@@ -9,8 +9,8 @@
  */
 void hash_table_delete(hash_table_t *ht)
 {
-        int i;
-        
+        usigned long int i;
+        hash_table_t *current
         for (i = 0; i < ht->size; i++)
         {
                 current = ht->array[i];
