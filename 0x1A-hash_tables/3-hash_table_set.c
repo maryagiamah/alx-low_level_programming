@@ -41,44 +41,16 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	hash_node_t *new, *current;
+	unsigned long int index = 0;
+	hash_node_t *new = NULL;
 
-	if (!ht || !key || !value)
+	if (!ht || !key || !value || !ht->array)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
 
-	if (ht->array[index] == NULL)
-	{
-		new = add_node(&(ht->array[index]), key, value);
-		if (!new)
-			return (0);
-		ht->array[index] = new;
-	}
-	else
-	{
-		current = ht->array[index];
-		while (current)
-		{
-			if (strcmp(current->key, key) == 0)
-			{
-				/* Free old value */
-				free(current->value);
-				/* Update value */
-				current->value = strdup(value);
-				if (!current->value)
-					return (0);
-				return (1);
-			}
-			if (current->next == NULL)
-			{
-				new = add_node(&(ht->array[index]), key, value);
-				if (!new)
-					return (0);
-				return (1);
-			}
-			current = current->next;
-		}
-	}
+
+	new = add_node(&(ht->array[index]), key, value);
+	if (!new)
+		return (0);
 	return (1);
 }
