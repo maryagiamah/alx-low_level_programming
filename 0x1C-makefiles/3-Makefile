@@ -1,0 +1,30 @@
+# Compiles school.c to executable
+CC = gcc
+SRC = school.c main.c
+OBJ = ${SRC:%.c=%.o}
+NAME = school
+
+# Recompile only the updated source files
+%.o: %.c m.h
+	${CC} -c $< -o $@
+
+# builds your executable
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+
+.PHONY: clean oclean fclean re
+# deletes all Emacs and Vim temporary files along with the executable
+clean:
+	-rm -f *~ ${NAME}
+
+# deletes the object files
+oclean:
+	-rm -f ${OBJ}
+
+#  deletes all Emacs and Vim temporary files, the executable, and the object files
+fclean:
+	 -rm -f *~ ${NAME}
+	 -rm -f ${OBJ}
+
+# forces recompilation of all source files
+re: oclean all
