@@ -142,6 +142,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	shash_node_t *current = NULL;
+
 	if (!ht || !ht->array || !ht->shead)
 		return (NULL);
 	current = ht->shead;
@@ -163,6 +164,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *current = NULL;
+
 	if (!ht || !ht->array || !ht->shead)
 		return;
 	current = ht->shead;
@@ -186,6 +188,7 @@ void shash_table_print(const shash_table_t *ht)
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *current = NULL;
+
 	if (!ht || !ht->array || !ht->stail)
 		return;
 	current = ht->stail;
@@ -209,6 +212,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 void shash_table_delete(shash_table_t *ht)
 {
 	shash_node_t *current = NULL, *next = NULL;
+
 	if (!ht)
 		return;
 	current = ht->shead;
