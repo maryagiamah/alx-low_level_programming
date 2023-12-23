@@ -108,11 +108,22 @@ void sort_node(shash_table_t *ht, shash_node_t *new)
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
-	shash_node_t *new = NULL;
+	shash_node_t *new = NULL, *current = NULL;
 
 	if (!ht || !ht->array || !key || !value || !ht->size)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
+	while (current)
+	{
+		if (strcmp(current->key, key) == 0)
+		{
+			if (current->value)
+				free(current->value);
+			current->value = strdup(value);
+			return (current->value ? 1 : 0);
+		}
+		current = current->next;
+	}
 	new = new_node(&(ht->array[index]), key, value);
 
 	if (!new)
@@ -130,10 +141,10 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-	shash_node_t *current = ht->shead;
-
+	shash_node_t *current = NULL;
 	if (!ht || !ht->array || !ht->shead)
 		return (NULL);
+	current = ht->shead;
 	while (current)
 	{
 		if (strcmp(current->key, key) == 0)
@@ -151,10 +162,10 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  */
 void shash_table_print(const shash_table_t *ht)
 {
-	shash_node_t *current = ht->shead;
-
+	shash_node_t *current = NULL;
 	if (!ht || !ht->array || !ht->shead)
 		return;
+	current = ht->shead;
 	printf("{");
 	while (current)
 	{
@@ -174,10 +185,10 @@ void shash_table_print(const shash_table_t *ht)
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	shash_node_t *current = ht->stail;
-
+	shash_node_t *current = NULL;
 	if (!ht || !ht->array || !ht->stail)
 		return;
+	current = ht->stail;
 	printf("{");
 	while (current)
 	{
@@ -197,10 +208,10 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-	shash_node_t *current = ht->shead, *next = NULL;
-
-	if (!ht || !ht->array || !ht->shead)
+	shash_node_t *current = NULL, *next = NULL;
+	if (!ht)
 		return;
+	current = ht->shead;
 	while (current)
 	{
 		next = current->snext;

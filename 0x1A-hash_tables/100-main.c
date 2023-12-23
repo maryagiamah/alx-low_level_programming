@@ -15,6 +15,7 @@ int main(void)
     ht = shash_table_create(1024);
     shash_table_set(ht, "y", "0");
     shash_table_print(ht);
+    shash_table_get(ht, "y");
     shash_table_set(ht, "j", "1");
     shash_table_print(ht);
     shash_table_set(ht, "c", "2");
