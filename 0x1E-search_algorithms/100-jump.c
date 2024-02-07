@@ -15,7 +15,7 @@ int search(int *array, size_t begin, size_t end, int value)
 
 	if (!array)
 		return (-1);
-	for (i = begin; i < size && array[i]; i++)
+	for (i = begin; i < end && array[i]; i++)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 		if (array[i] == value)
