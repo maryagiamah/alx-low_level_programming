@@ -15,6 +15,14 @@ int interpolation_search(int *array, size_t size, int value)
 	while (left <= right)
 	{                                
 		mid = left + (((double)(right - left) / (array[right] - array[left])) * (value - array[left]));
+		if (mid >= size)
+		{
+			printf("Value checked array[%ld] is out of range", mid);
+			break;
+		}
+
+		printf("Value checked array[%d] = [%d]", mid, array[mid]);
+
 		if (array[mid] < value)
 			left = mid + 1;
 		else if (array[mid] > value)                                                                    right = mid - 1;                                                                else
