@@ -9,12 +9,14 @@
  * Return: ZERO OR VALUE INDEX
  */
 int interpolation_search(int *array, size_t size, int value)
-{                                                                                              size_t left = 0, right = size - 1, mid;
+{
+	size_t left = 0, right = size - 1, mid;
 
 	if (!array)                                                                                     return (-1);
 	while (left <= right)
 	{                                
-		mid = left + (((double)(right - left) / (array[right] - array[left])) * (value - array[left]));
+		mid = left + (((double)(right - left)
+/ (array[right] - array[left])) * (value - array[left]));
 		if (mid >= size)
 		{
 			printf("Value checked array[%ld] is out of range\n", mid);
