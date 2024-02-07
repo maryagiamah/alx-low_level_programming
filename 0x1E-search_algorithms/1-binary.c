@@ -19,7 +19,7 @@ int binary_search(int *array, size_t size, int value)
 		print_array(array, left, right);
 
 		mid = (left + right) / 2;
-		if (array[mid] < (size_t)value)
+		if (array[mid] < value)
 			left = mid + 1;
 		else if (array[mid] > (size_t)value)
 			right = mid - 1;
@@ -28,6 +28,7 @@ int binary_search(int *array, size_t size, int value)
 	}
 	return (-1);
 }
+
 /**
  * print_array - prints array
  * @array: array to print
