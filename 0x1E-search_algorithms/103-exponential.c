@@ -50,12 +50,14 @@ void print_array(int *array, size_t left, size_t right)                         
 		printf("\n");
 }
 
-/**                                                                                      * interpolation_search - searches an array for a value                                  * @array: pointer to the first element of the array to search in                        * @size: number of elements in array
+/**                                                                                      * exponential_search - searches an array for a value
+ * @array: pointer to the first element of the array to search in
+ * @size: number of elements in array
  * @value: the value to search for
  *
  * Return: ZERO OR VALUE INDEX
  */
-int interpolation_search(int *array, size_t size, int value)
+int exponential_search(int *array, size_t size, int value)
 {                                                                                               size_t step = 2, i, index;                                                                                                                                             		if (!array)
 	return (-1);
 	for (i = 0; i < size; i *= step)
