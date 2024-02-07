@@ -9,7 +9,7 @@
  *
  * Return: ZERO OR VALUE INDEX
  */
-int linear_search(int *array, size_t begin, size_t end, int value)
+int search(int *array, size_t begin, size_t end, int value)
 {
 	size_t i;
 
@@ -44,13 +44,13 @@ int jump_search(int *array, size_t size, int value)
 		if ((i + step) < size && value <= array[i + step])
 		{
 			printf("Value found between indexes [%ld] and [%ld]\n", i, i + step);
-			index = linear_search(array, i, i + step, value);
+			index = search(array, i, i + step, value);
 			return (i + index);
 		}
 		else if ((i + step) > size)
 		{
 			printf("Value found between indexes [%ld] and [%ld]\n", i, i + step);
-			index = linear_search(array, i, size, value);
+			index = search(array, i, size, value);
 		}
 	}
 	return (-1);
