@@ -2,9 +2,10 @@
 #include <math.h>
 
 /**
- * linear_search - searches an array for a value
+ * search - searches an array for a value
  * @array: pointer to the first element of the array to search in
- * @size: number of elements in array
+ * @begin: start point to search
+ * @end: end point of search
  * @value: the value to search for
  *
  * Return: ZERO OR VALUE INDEX
