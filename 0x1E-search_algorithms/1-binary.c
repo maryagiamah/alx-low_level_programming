@@ -49,7 +49,7 @@ void print_array(int *array, size_t left, size_t right)
 	}
 	while (left <= right)
 	{
-		if (left != righy)
+		if (left != right)
 			printf(", ");
 		printf("%d", array[left]);
 		left++;
