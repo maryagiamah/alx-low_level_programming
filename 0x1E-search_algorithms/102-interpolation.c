@@ -12,9 +12,10 @@ int interpolation_search(int *array, size_t size, int value)
 {
 	size_t left = 0, right = size - 1, mid;
 
-	if (!array)                                                                                     return (-1);
+	if (!array)
+		return (-1);
 	while (left <= right)
-	{                                
+	{
 		mid = left + (((double)(right - left)
 / (array[right] - array[left])) * (value - array[left]));
 		if (mid >= size)
@@ -27,7 +28,9 @@ int interpolation_search(int *array, size_t size, int value)
 
 		if (array[mid] < value)
 			left = mid + 1;
-		else if (array[mid] > value)                                                                    right = mid - 1;                                                                else
+		else if (array[mid] > value)
+			right = mid - 1;
+		else
 			return (mid);
 	}
 	return (-1);
