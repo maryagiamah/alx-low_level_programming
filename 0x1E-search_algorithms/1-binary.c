@@ -1,4 +1,5 @@
 #include "search_algos.h"
+
 /**
  * binary_search - uses binary search algorithm on an array
  * @array: pointer to the first element of the array to search in
