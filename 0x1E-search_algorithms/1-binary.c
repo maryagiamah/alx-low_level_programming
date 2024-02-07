@@ -49,9 +49,9 @@ void print_array(int *array, size_t left, size_t right)
 	}
 	while (left <= right)
 	{
+		printf("%d", array[left]);
 		if (left != right)
 			printf(", ");
-		printf("%d", array[left]);
 		left++;
 	}
 	printf("\n");
