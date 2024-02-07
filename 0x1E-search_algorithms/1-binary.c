@@ -39,7 +39,6 @@ int binary_search(int *array, size_t size, int value)
  */
 void print_array(int *array, size_t left, size_t right)
 {
-	size_t begin = left;
 
 	if (!array | (left > right))
 		return;
@@ -50,8 +49,8 @@ void print_array(int *array, size_t left, size_t right)
 	}
 	while (left <= right)
 	{
-		if (left != begin)
-			printf(" ");
+		if (left != righy)
+			printf(", ");
 		printf("%d", array[left]);
 		left++;
 	}
