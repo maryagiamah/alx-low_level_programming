@@ -51,7 +51,7 @@ void print_array(int *array, size_t left, size_t right)
 	{
 		if (left == right)
 		{
-			printf("%d\n", array[left]);
+			printf("%d", array[left]);
 			break;
 		}
 		printf("%d, ", array[left]);
