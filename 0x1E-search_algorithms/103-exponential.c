@@ -40,11 +40,12 @@ int expB_search(int *array, size_t start, size_t end, int value)
  *
  * Return: Void
  */
-void print_array(int *array, size_t left, size_t right) 
+void print_array(int *array, size_t left, size_t right)
 {
 	if (!array || (left > right))
 		return;
-	if (left == right)                                                                      {
+	if (left == right)
+	{
 		printf("%d\n", array[left]);
 		return;
 	}
@@ -72,6 +73,7 @@ void print_array(int *array, size_t left, size_t right)
 int exponential_search(int *array, size_t size, int value)
 {
 	size_t step = 2, i, index;
+
 	if (!array)
 		return (-1);
 	for (i = 1; i < size; i *= step)
