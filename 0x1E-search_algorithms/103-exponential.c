@@ -8,7 +8,7 @@
  *
  * Return: INDEX OF VALUE OR ZERO
  */
-int expB_search(int *array, size_t start, size_t size, int value)
+int expB_search(int *array, size_t start, size_t end, int value)
 {
 	size_t left = start, right = end - 1, mid;
 
