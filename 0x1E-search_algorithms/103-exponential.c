@@ -72,12 +72,12 @@ void print_array(int *array, size_t left, size_t right)
  */
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t step = 2, i, index = 0;
+	size_t step = 2, i, index;
 
 	if (!array)
 		return (-1);
 	if (array[0] == value)
-		printf("Value checked array[%ld] = [%d]\n", 0, array[0]);
+		printf("Value checked array[%d] = [%d]\n", 0, array[0]);
 	for (i = 1; i < size; i *= step)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
