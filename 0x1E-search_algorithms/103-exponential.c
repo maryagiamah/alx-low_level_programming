@@ -78,6 +78,8 @@ int exponential_search(int *array, size_t size, int value)
 		return (-1);
 	if (array[0] == value)
 		printf("Value checked array[%d] = [%d]\n", 0, array[0]);
+		return (0);
+
 	for (i = 1; i < size; i *= step)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
